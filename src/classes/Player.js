@@ -9,6 +9,22 @@ export default class Player {
     }
   }
 
+  moveLeft() {
+    this.position.x -= 6;
+  }
+
+  moveRight() {
+    this.position.x += 6;
+  }
+
+  moveTop() {
+    this.position.y -= 6;
+  }
+
+  moveBottom() {
+    this.position.y += 6;
+  }
+
   draw(ctx) {
     ctx.fillStyle = 'red'
     ctx.fillRect(

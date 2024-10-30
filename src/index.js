@@ -19,19 +19,19 @@ const gameLoop = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   if (keys.left) {
-    player.position.x -= 6;
+    player.moveLeft()
   }
 
   if (keys.right) {
-    player.position.x += 6;
+    player.moveRight()
   }
 
   if (keys.top) {
-    player.position.y -= 6;
+    player.moveTop()
   }
 
   if (keys.bottom) {
-    player.position.y += 6;
+    player.moveBottom()
   }
 
   if (player.position.y < 30) {
