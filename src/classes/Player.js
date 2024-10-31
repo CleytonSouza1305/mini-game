@@ -8,6 +8,13 @@ export default class Player {
       x: canvasWidth / 2 - this.width / 2,
       y: canvasHeight - this.height - 30
     }
+    this.image
+  }
+
+  getImage() {
+    const image = new Image()
+    image.src = ""
+    return image
   }
 
   moveLeft() {
