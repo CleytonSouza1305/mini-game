@@ -18,11 +18,11 @@ const keys = {
 const gameLoop = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  if (keys.left) {
+  if (keys.left && player.position.x >= 0) {
     player.moveLeft()
   }
 
-  if (keys.right) {
+  if (keys.right && player.position.x <= canvas.width - player.width) {
     player.moveRight()
   }
 
@@ -52,39 +52,17 @@ gameLoop();
 addEventListener('keydown', (ev) => {
   const key = ev.key.toLowerCase();
 
-  if (key === 'a') {
-    keys.left = true;
-  }
-
-  if (key === 'd') {
-    keys.right = true;
-  }
-
-  if (key === 'w') {
-    keys.top = true;
-  }
-  
-  if (key === 's') {
-    keys.bottom = true;
-  }
+  if (key === 'a') keys.left = true;
+  if (key === 'd') keys.right = true;
+  if (key === 'w') keys.top = true;
+  if (key === 's') keys.bottom = true;
 });
 
 addEventListener('keyup', (ev) => {
   const key = ev.key.toLowerCase();
 
-  if (key === 'a') {
-    keys.left = false;
-  }
-
-  if (key === 'd') {
-    keys.right = false;
-  }
-
-  if (key === 'w') {
-    keys.top = false;
-  }
-  
-  if (key === 's') {
-    keys.bottom = false;
-  }
+  if (key === 'a') keys.left = false;
+  if (key === 'd') keys.right = false;
+  if (key === 'w') keys.top = false;
+  if (key === 's') keys.bottom = false;
 });
